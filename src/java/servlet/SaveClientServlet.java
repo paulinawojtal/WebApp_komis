@@ -34,7 +34,7 @@ public class SaveClientServlet extends HttpServlet{
         client.setRegion(req.getParameter("region"));
         client.setAge(Integer.parseInt(req.getParameter("age")));
         System.out.println(req.getParameter("gender"));
-        int gen = req.getParameter("gender") == "male" ? 0 : 1;
+        int gen = req.getParameter("gender").equals("male") ? 0 : 1;
         System.out.println(gen);
         client.setGender(gen);
         

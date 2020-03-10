@@ -4,27 +4,31 @@
     Author     : PaulinaMaciej
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Search vehicle</title>
-        <link rel="stylesheet" href="styles.css"
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="js/searchVehicle.js"></script>
     </head>
     <body>
-        <form action="searchVehicle" class="select-class">
-            <select>
-                <option name="brand">Brand</option>
-                <option name="type">Type</option>
-                <option name="year">Year</option>
-                <option name="mileage">Mileage</option>
-                <option name="regNumber">Registraion Number</option>
-                <option name="vin">VIN Number</option>
-                <option name="regDate">Registration Date</option>
-            </select>
-             
-           <input type="submit" value="Search Vehicle"/>
+        <form class="table_small">
+            <input type="text" list="columns"/>
+            <datalist id="columns">
+                <option value="Honda"></option>
+                <option value="Mazda"></option>
+                <option value="Hyiundai"></option>
+            </datalist>
+        <button id="search" type="button">Search</button>
+        <span id="selectedCol"></span>
+        <select name="searchSelecte"d id="searchSelected">
+            
+        </select>
         </form>
         
     </body>

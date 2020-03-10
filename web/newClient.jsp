@@ -36,6 +36,6 @@
             </form>
         </fieldset>
         
-        <a href="index.html">Back to menu</a>
+        <a href="start.jsp">Back to menu</a>
     </body>
 </html>

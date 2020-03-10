@@ -7,6 +7,7 @@ package dao;
 
 import java.util.List;
 import model.Client;
+import model.Vehicle;
 
 /**
  *
@@ -19,4 +20,6 @@ public interface ObjectDAO<T> {
     void deleteObjecttById(int id);
     void updateObjectById(T obj);
     T findObjectById(int id);
+    public List<String> getColumnList();
+    public List<Vehicle> getData(String brand);
 }

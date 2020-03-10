@@ -54,7 +54,18 @@ public class VehicleDAOImpl implements ObjectDAO<Vehicle>{
         return vehicle;
     }
     
+    public List<String> getColumnList(){
+        Query q = em.createNativeQuery("select column_name from information_schema.columns where table_name = 'vehicle'");
+        List<String> colNames = q.getResultList();
+        return colNames;
+    }
     
-    
+    public List<Vehicle> getData(String brand){
+        Query q = em.createQuery("select v from Vehicle v where v.brand = :getBrand", Vehicle.class);
+        q.setParameter("getBrand", brand);
+        
+        List<Vehicle> vehicles = q.getResultList();
+        return vehicles;
+    }
     
 }

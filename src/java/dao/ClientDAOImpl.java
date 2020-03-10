@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import model.Client;
+import model.Vehicle;
 
 /**
  *
@@ -18,7 +19,6 @@ import model.Client;
  */
 @Stateless
 public class ClientDAOImpl implements ObjectDAO<Client> {
-    
     
     @PersistenceContext
     private EntityManager em;
@@ -50,5 +50,16 @@ public class ClientDAOImpl implements ObjectDAO<Client> {
         Client client = em.find(Client.class, id);
         return client;
     }
+
+    @Override
+    public List<String> getColumnList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Vehicle> getData(String brand) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }
